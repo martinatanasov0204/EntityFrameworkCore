@@ -14,7 +14,7 @@ namespace Blueshift.EntityFrameworkCore.MongoDB.Tests.Storage
     {
         private readonly MongoDbTypeMappingSource _mongoDbTypeMappingSource = new MongoDbTypeMappingSource(
             new TypeMappingSourceDependencies(
-                Mock.Of<IValueConverterSelector>()));
+                Mock.Of<IValueConverterSelector>(), Mock.Of<IEnumerable<ITypeMappingSourcePlugin>>()));
 
         [Theory]
         [InlineData(typeof(int))]
